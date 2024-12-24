@@ -1,0 +1,24 @@
+proc get_element {list index} {
+  if {$index < 0 || $index >= [llength $list]} {
+    return -code error "Index out of range"
+  }
+  return [lindex $list $index]
+}
+
+# Example usage:
+set mylist {a b c d e}
+puts [get_element $mylist 2]  ;# Output: c
+puts [catch {get_element $mylist 10} result]
+puts "Error: $result" ;# Output: Error: Index out of range
+
+#Alternative solution using error handling
+proc get_element_alt {list index} {
+    if { [llength $list] == 0} {
+        return -code error "Empty List"
+    }
+    if {$index < 0 || $index >= [llength $list]} {
+        return -code error "Index out of range"
+    }
+    return [lindex $list $index]
+}
+puts [get_element_alt {} 0];#Error: Empty List
