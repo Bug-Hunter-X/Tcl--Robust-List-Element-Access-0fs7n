@@ -1,0 +1,1 @@
+This repository contains a Tcl example demonstrating a common error in list element access, along with its solution.  The `bug.tcl` file shows the flawed code that doesn't handle index out-of-bounds errors. The `bugSolution.tcl` file presents a corrected version which includes proper error handling.
